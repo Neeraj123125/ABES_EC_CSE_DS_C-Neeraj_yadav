@@ -7,26 +7,26 @@
 // console.log(isDivisible(3,2));
 
 
-class student{
-constructor(name,rollno){
-this.name = name;
-this.rollno = rollno;
-}
-display(){
- console.log(this.name);            
- console.log(this.rollno);
-}
-}
+// class student{
+// constructor(name,rollno){
+// this.name = name;
+// this.rollno = rollno;
+// }
+// display(){
+//  console.log(this.name);            
+//  console.log(this.rollno);
+// }
+// }
 
-//hoisting in js
-var a = 10;
-console.log(a);
-var a = 20;
-console.log(a);
+// //hoisting in js
+// var a = 10;
+// console.log(a);
+// var a = 20;
+// console.log(a);
 
-// non hoisting in js
-let a = 10;
-console.log(a);
-let a = 20;
-a = 30;
-console.log(a);
+// // non hoisting in js
+// let a = 10;
+// console.log(a);
+// let a = 20;
+// a = 30;
+// console.log(a);
