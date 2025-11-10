@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>College Timetable</title>
+<style>
+  :root{
+    --border:#222;
+    --head-bg:#f0f0f0;
+    --vcol-bg:#efefef;
+    --highlight:#ffe84a; /* yellow */
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    padding:24px;
+    background:#fafafa;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+
+  .wrap{
+    max-width: 1300px;
+    margin:0 auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    background:#fff;
+    overflow:auto;
+    border-radius:12px;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed; /* keep columns aligned */
+  }
+
+  /* set consistent column widths */
+  col.day     { width: 110px; }
+  col.slot    { width: 150px; }
+  col.vcol    { width: 80px; }
+
+  th, td{
+    border:1px solid var(--border);
+    text-align:center;
+    padding:10px 8px;
+    vertical-align:middle;
+    line-height:1.25;
+    font-size:14px;
+  }
+
+  thead th{
+    background:var(--head-bg);
+    font-weight:700;
+  }
+
+  .vcol{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    background:var(--vcol-bg);
+    font-weight:800;
+    letter-spacing:.35rem; /* spaced letters like the image */
+    font-size:18px;
+  }
+
+  .highlight{
+    background:var(--highlight);
+    font-weight:800;
+  }
+
+  .muted{ color:#666; }
+
+  /* small tweaks for nicer look */
+  td p{ margin:.25rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <table aria-label="Class Timetable">
+    <colgroup>
+      <col class="day">
+      <col class="slot"><col class="slot">
+      <col class="vcol">
+      <col class="slot"><col class="slot">
+      <col class="vcol">
+      <col class="slot"><col class="slot"><col class="slot"><col class="slot">
+    </colgroup>
+
+    <thead>
+      <tr>
+        <th>DAY</th>
+        <th>8:50-9:40<br/>L1</th>
+        <th>9:40-10:30<br/>L2</th>
+        <th>10:30-10:40<br/>BREAK</th>
+        <th>10:40-11:30<br/>L3</th>
+        <th>11:30-12:20<br/>L4</th>
+        <th>12:20-1:10</th>
+        <th>1:10-2:00<br/>L5</th>
+        <th>2:00-2:50<br/>L6</th>
+        <th>2:50-3:40<br/>L7</th>
+        <th>3:40-4:30<br/>L8</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- MONDAY -->
+      <tr>
+        <td>Mon</td>
+        <td>DAA-BCS503-(MP)</td>
+        <td>DBMS-BCS501-(DA)</td>
+        <td class="vcol" rowspan="5">BREAK</td>
+        <td>AOSC-BCS056-(Shreya)</td>
+        <td>OOSD-BCS054-(VK)</td>
+        <td class="vcol" rowspan="5">LUNCH</td>
+        <td colspan="2">FSD Training Ms Rohini</td>
+        <!-- <td class="muted">&nbsp;</td> -->
+        <td>DA-BCD501-(MS)</td>
+        <td>DA LAB-BCD551-(MS)||(VK)</td>
+      </tr>
+
+      <!-- TUESDAY -->
+      <tr>
+        <td>Tue</td>
+        <td>DA-BCD501-(MS)</td>
+        <td>DAA-BCS503-(MP)</td>
+        <td class="highlight" colspan="2">CSE(DS)-C || VA(LD)</td>
+        <td>DAA LAB-BCS553-(SL)||(DD)</td>
+        <td colspan="3">DSA Training- Ms. Priyanka Gpta</td>
+        <td class="muted">&nbsp;</td>
+        <td class="muted">&nbsp;</td>
+      </tr>
+
+      <!-- WEDNESDAY -->
+      <tr>
+        <td>Wed</td>
+        <td>OOSD-BCS054-(VK)</td>
+        <td>AOSC-BCS056-(Shreya)</td>
+        <td colspan="2">
+          <p><strong>Domain Training:</strong></p>
+          <p>DSAIML-LT305</p>
+          <p>Cloud-LT307</p>
+          <p>Networking and Cyber Security-LT308</p>
+        </td>
+        <td>DA-BCD501-(MS)</td>
+        <td>DAA-BCS503-(MP)</td>
+        <td colspan="2">DBMS LAB-BCS551-(YB)||(DD)</td>
+      </tr>
+
+      <!-- THURSDAY -->
+      <tr>
+        <td>Thu</td>
+        <td class="highlight" colspan="2">CSE(DS)-C || QA/LR<br/>(Harshit Sharma)</td>
+        <td>DBMS-BCS501-(DA)</td>
+        <td>AOSC-BCS056-(Shreya)</td>
+        <td>DAA LAB-BCS553-(SL)||(DD)</td>
+        <td colspan="2">FSD Training Ms Rohini</td>
+        <td>OOSD-BCS054-(VK)</td>
+      </tr>
+
+      <!-- FRIDAY -->
+      <tr>
+        <td>Fri</td>
+        <td colspan="2">DSA Training- Ms. Priyanka Gpta</td>
+        <td>DSA Training- Ms. Priyanka Gpta</td>
+        <td>DA-BCD501-(MS)</td>
+        <td>DBMS-BCS501-(DA)</td>
+        <td class="highlight">CSE(DS)-C || ISS<br/>(Dr. Abrity Thakur)</td>
+        <td>OOSD-BCS054-(VK)</td>
+        <td>DAA-BCS503-(MP)</td>
+        <td class="muted">&nbsp;</td> <!-- L8 kept intentionally blank -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

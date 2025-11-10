@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url(https://www.tqmi.com/wp-content/uploads/2022/02/Data-Science-4.webp) no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header, footer {
+      background-color: rgba(44, 62, 80, 0.9);
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.2);
+      width: 400px;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      transition: 0.4s ease-in-out;
+    }
+
+    .form-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: 0.3s ease;
+      background: rgba(255,255,255,0.8);
+    }
+
+    input:focus, select:focus {
+      border-color: #2980b9;
+      outline: none;
+      box-shadow: 0 0 8px #2980b9;
+    }
+
+    /* Gender Section */
+    .gender-options {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px; /* small distance between Male & Female */
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .gender-options label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: normal;
+    }
+
+    /* Buttons */
+    .buttons {
+      text-align: center;
+    }
+
+    .buttons input {
+      width: 130px;
+      padding: 12px;
+      margin: 8px;
+      border: 2px solid #fff;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      background: transparent;
+      color: #fff;
+      font-weight: bold;
+      transition: all 0.4s ease-in-out;
+    }
+
+    /* Submit Hover */
+    .buttons input[type="submit"]:hover {
+      background: linear-gradient(135deg, #4c1bd2, #2ecc71);
+      color: white;
+      box-shadow: 0 6px 15px rgba(39, 174, 96, 0.6);
+      transform: scale(1.08);
+    }
+
+    /* Reset Hover */
+    .buttons input[type="reset"]:hover {
+      background: linear-gradient(135deg, #3dd7e5, #e74c3c);
+      color: white;
+      box-shadow: 0 6px 15px rgba(192, 57, 43, 0.6);
+      transform: scale(1.08);
+    }
+
+    footer {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Header -->
+  <header>
+    <h1>Student Portal</h1>
+  </header>
+
+  <!-- Form -->
+  <div class="form-container">
+    <h2>Registration Form</h2>
+    <form action="">
+      <label for="name">Full Name:</label>
+      <input type="text" name="name" id="name" required>
+
+      <label for="rollno">Roll No:</label>
+      <input type="number" name="rollno" id="rollno" required>
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required>
+
+      <label>Gender:</label>
+      <div class="gender-options">
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+      </div>
+
+      <label for="language">Preferred Language:</label>
+      <select name="language" id="language" required>
+        <option value="">-- Select --</option>
+        <option value="c++">C++</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="data science">Data Science</option>
+      </select>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© Neeraj</p>
+  </footer>
+
+</body>
+</html>
